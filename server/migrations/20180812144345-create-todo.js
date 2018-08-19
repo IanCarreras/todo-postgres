@@ -1,5 +1,7 @@
 'use strict';
+
 module.exports = {
+
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Todos', {
       id: {
@@ -9,7 +11,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -19,9 +22,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Todos');
+    return queryInterface.dropTable('Todos')
   }
-};
+}
